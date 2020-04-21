@@ -26,11 +26,11 @@
   --Accent2Saturated: rgb(232, 255, 129);
   --Accent3Saturated: rgb(255, 0, 68);
 
-  --PrimaryTransparent: rgba(53, 178, 231, 0.5);
-  --SecondaryTransparent: rgba(112, 193, 179, 0.5);
-  --Accent1Transparent: rgba(178, 219, 191, 0.5);
-  --Accent2Transparent: rgba(243, 255, 189, 0.5);
-  --Accent3Transparent: rgba(255, 22, 84, 0.5);
+  --PrimaryTransparent: rgba(53, 178, 231, 0.3);
+  --SecondaryTransparent: rgba(112, 193, 179, 0.3);
+  --Accent1Transparent: rgba(178, 219, 191, 0.3);
+  --Accent2Transparent: rgba(243, 255, 189, 0.3);
+  --Accent3Transparent: rgba(255, 22, 84, 0.3);
 
   --Canvas: rgb(255, 255, 255);
   --LightGrey: rgb(214, 214, 214);
@@ -55,7 +55,7 @@ body {
   margin: 0;
   font-family: "Roboto", sans-serif;
   font-size: 1em;
-  color: var(--CanvasContrast);
+  color: var(--DarkGrey);
 }
 
 /* --------------------- START OF FRAMEWORK SECTION --------------------- 
@@ -211,7 +211,6 @@ section.loadings {
 }
 
 main > section > h6 {
-  color: var(--Grey);
   background: var(--Canvas);
   position: relative;
   text-align: center;
@@ -225,56 +224,56 @@ main > section > h6 {
 
 .btn-hover {
   text-decoration: none;
-  color: var(--Canvas);
+  color: var(--PrimarySaturated);
+  font-size: 1.05em;
+  border: 2px solid var(--PrimarySaturated);
   padding: 1em 1.5em;
   border-radius: 6px;
   text-align: center;
   outline: none;
 
-  position: relative;
-  top: -3px;
-  left: -2px;
-  box-shadow: 2px 3px var(--DarkGrey);
-  background-color: var(--PrimarySaturated);
+  background-color: var(--Canvas);
 }
 
 .btn-active {
   text-decoration: none;
-  color: var(--Canvas);
+  color: var(--PrimarySaturated);
+  border: 2px solid var(--PrimarySaturated);
   padding: 1em 1.5em;
   border-radius: 6px;
   text-align: center;
   outline: none;
 
-  background-color: var(--PrimarySaturated);
+  background-color: var(--Canvas);
 }
 
 .btn-disabled {
   text-decoration: none;
-  color: var(--Canvas);
+  color: var(--PrimaryDesaturated);
+  border: 2px solid var(--PrimaryDesaturated);
   padding: 1em 1.5em;
   border-radius: 6px;
   text-align: center;
   outline: none;
-  background-color: var(--PrimaryDesaturated);
-  opacity: 75%;
+  background-color: var(--Canvas);
+  opacity: 30%;
 }
 
 a.link-hover {
-  text-decoration: none;
-  color: var(--Accent3Saturated);
+  text-decoration: underline;
+  color: var(--CanvasContrast);
   font-weight: 400;
 }
 
 a.link-active {
-  text-decoration: none;
-  color: var(--Accent3Saturated);
+  text-decoration: underline;
+  color: var(--CanvasContrast);
   font-weight: 400;
 }
 
 a.link-visited {
   text-decoration: none;
-  color: var(--Accent3Desaturated);
+  color: var(--CanvasContrast);
   font-weight: 400;
 }
 
@@ -369,20 +368,22 @@ em {
 
 a.link {
   text-decoration: none;
-  color: var(--Accent3);
+  color: var(--CanvasContrast);
   font-weight: 400;
 }
 
 a.link:hover {
-  color: var(--Accent3Saturated);
+  color: var(--CanvasContrast);
+  text-decoration: underline;
 }
 
 a.link:active {
-  color: var(--Accent3Saturated);
+  color: var(--CanvasContrast);
+  text-decoration: underline;
 }
 
 a.link:visited {
-  color: var(--Accent3Desaturated);
+  color: var(--CanvasContrast);
 }
 
 label {
@@ -505,8 +506,9 @@ textarea {
 .btn {
   text-decoration: none;
   color: var(--Canvas);
-  background-color: var(--Primary);
-  color: var(--Canvas);
+  background-color: var(--Canvas);
+  border: 2px solid var(--Primary);
+  color: var(--Primary);
   padding: 1em 1.5em;
   border-radius: 6px;
   text-align: center;
@@ -514,17 +516,14 @@ textarea {
 }
 
 .btn:hover {
-  color: var(--Canvas);
-  position: relative;
-  top: -3px;
-  left: -2px;
-  box-shadow: 2px 3px var(--DarkGrey);
-  background-color: var(--PrimarySaturated);
+  color: var(--PrimarySaturated);
+  font-size: 1.05em;
+  border: 2px solid var(--PrimarySaturated);
 }
 
 .btn:active {
-  color: var(--Canvas);
-  background-color: var(--PrimarySaturated);
+  color: var(--PrimarySaturated);
+  border: 2px solid var(--PrimarySaturated);
 }
 
 .alrt {
