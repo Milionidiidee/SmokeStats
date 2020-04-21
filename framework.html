@@ -10,59 +10,86 @@
   <body>
     <main class="framework">
       <section class="typography framework">
-        <h6>Typography</h6>
+        <h6 class="section-title-typo">Typography</h6>
 
-        <h1 class="black-text">Aa</h1>
-        <h2 class="black-text">Roboto</h2>
-        <h1 class="regular-text">Aa</h1>
-        <h2 class="regular-text">Roboto</h2>
-        <h1 class="thin-text">Aa</h1>
-        <h2 class="thin-text">Roboto</h2>
+        <div class="black-text-typo">
+          <h1 class="black-text">Aa</h1>
+          <h2 class="black-text">Roboto Black</h2>
+        </div>
+        <div class="regular-text-typo">
+          <h1 class="regular-text">Aa</h1>
+          <h2 class="regular-text">Roboto Regular</h2>
+        </div>
+        <div class="thin-text-typo">
+          <h1 class="thin-text">Aa</h1>
+          <h2 class="thin-text">Roboto Thin</h2>
+        </div>
 
-        <h1>h1 heading</h1>
-        <h2>h2 heading</h2>
-        <h3>h3 heading</h3>
-        <h4>h4 heading</h4>
-        <h5>h5 heading</h5>
-        <h6>h6 heading</h6>
+        <div class="headings-typo">
+          <h1>h1 heading</h1>
+          <h2>h2 heading</h2>
+          <h3>h3 heading</h3>
+          <h4>h4 heading</h4>
+          <h5>h5 heading</h5>
+          <h6>h6 heading</h6>
+        </div>
 
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere est
-          amet saepe natus iusto sequi, aliquam repudiandae totam nemo vel sed
-          assumenda provident debitis atque. Eligendi assumenda vero aut illum.
-        </p>
-        <p>
-          <strong
-            >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci
-            maxime deleniti commodi debitis laudantium, laboriosam iste omnis et
-            necessitatibus consequuntur quae ex. Id, eveniet incidunt? Quia
-            eligendi cum dolore molestiae!</strong
-          >
-        </p>
-        <p>
-          <em
-            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
-            cumque natus nisi rerum aut, dolor aliquid nesciunt quisquam
-            possimus, aperiam quibusdam cupiditate. Delectus, praesentium ipsam?
-            Fuga voluptatibus id similique quisquam.</em
-          >
-        </p>
+        <div class="body-typo">
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere est
+            amet saepe natus iusto sequi, aliquam repudiandae totam nemo vel sed
+            assumenda provident debitis atque. Eligendi assumenda vero aut
+            illum.
+          </p>
+          <p>
+            <strong
+              >Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Adipisci maxime deleniti commodi debitis laudantium, laboriosam
+              iste omnis et necessitatibus consequuntur quae ex. Id, eveniet
+              incidunt? Quia eligendi cum dolore molestiae!</strong
+            >
+          </p>
+          <p>
+            <em
+              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+              cumque natus nisi rerum aut, dolor aliquid nesciunt quisquam
+              possimus, aperiam quibusdam cupiditate. Delectus, praesentium
+              ipsam? Fuga voluptatibus id similique quisquam.</em
+            >
+          </p>
+        </div>
       </section>
       <section class="buttons framework">
-        <h6>Buttons</h6>
+        <h6 class="section-title-button">Buttons</h6>
 
-        <a href="#" class="btn">Default</a>
-        <a href="#" class="btn btn-hover">Hover</a>
-        <a href="#" class="btn btn-active">Active</a>
-        <a href="#" class="btn btn-disabled">Disable</a>
+        <div class="default-button">
+          <a href="#" class="btn">Default</a>
+        </div>
+        <div class="hover-button">
+          <a href="#" class="btn-hover">Hover</a>
+        </div>
+        <div class="active-button">
+          <a href="#" class="btn-active">Active</a>
+        </div>
+        <div class="disabled-button">
+          <a href="#" class="btn-disabled">Disable</a>
+        </div>
       </section>
       <section class="links framework">
-        <h6>Links</h6>
+        <h6 class="section-title-links">Links</h6>
 
-        <a href="#">Link</a>
-        <a href="#" class="link-active">Active</a>
-        <a href="#" class="link-hover">Hovered</a>
-        <a href="#" class="link-visited">Visited</a>
+        <div class="default-links">
+          <a href="#" class="link">Link</a>
+        </div>
+        <div class="hover-links">
+          <a href="#" class="link-hover">Hovered</a>
+        </div>
+        <div class="active-links">
+          <a href="#" class="link-active">Active</a>
+        </div>
+        <div class="visited-links">
+          <a href="#" class="link-visited">Visited</a>
+        </div>
       </section>
       <section class="inputs framework">
         <h6>Inputs</h6>
@@ -72,20 +99,41 @@
           <input type="text" placeholder="Placeholder" name="default" />
           <p class="form-mess">Message</p>
           <label for="active">Active input</label>
-          <input type="text" placeholder="Placeholder" name="active" />
+          <input
+            type="text"
+            placeholder="Placeholder"
+            name="active"
+            class="active-input"
+          />
           <label for="disable">Disabled input</label>
-          <input type="text" placeholder="Placeholder" name="disable" />
+          <input
+            type="text"
+            placeholder="Placeholder"
+            name="disable"
+            disabled
+          />
           <label for="right">Right input</label>
-          <input type="text" placeholder="Placeholder" name="right" />
+          <input
+            type="text"
+            placeholder="Placeholder"
+            name="right"
+            class="right-input"
+          />
           <p class="form-mess good-mess">Good Message</p>
           <label for="wrong">Wrong input</label>
-          <input type="text" placeholder="Placeholder" name="wrong" />
+          <input
+            type="text"
+            placeholder="Placeholder"
+            name="wrong"
+            class="wrong-input"
+          />
           <p class="form-mess bad-mess">Bad Message</p>
 
           <label for="select">Select input</label>
-          <select name="select" id=""></select>
-          <option value="1">Option One</option>
-          <option value="2">Option Two</option>
+          <select name="select" id="">
+            <option value="1">Option One</option>
+            <option value="2">Option Two</option>
+          </select>
 
           <label for="textArea">Textarea</label>
           <textarea
@@ -95,19 +143,16 @@
             rows="10"
             placeholder="TextArea"
           ></textarea>
-
-          <input type="checkbox" name="checkbox" id="checkActive" checked />
-          <label for="checkActive">Checked</label>
-          <input type="checkbox" name="checkbox" id="checkDisabled" disabled />
-          <label for="checkActive">Disabled</label>
         </form>
       </section>
       <section class="alerts framework">
-        <h6>Alerts</h6>
+        <h6 class="section-title-alerts">Alerts</h6>
 
-        <h6 class="alrt">Alert</h6>
-        <h6 class="alrt-bad">Bad Alert</h6>
-        <h6 class="alrt-good">Good Alert</h6>
+        <div class="section-alerts">
+          <h6 class="alrt">Alert</h6>
+          <h6 class="alrt alrt-bad">Bad Alert</h6>
+          <h6 class="alrt alrt-good">Good Alert</h6>
+        </div>
       </section>
       <section class="colors framework">
         <h6>Palette</h6>
@@ -126,8 +171,10 @@
       <section class="loadings framework">
         <h6>Loadings</h6>
 
-        <div class="loading"></div>
-        <label for="">Loading...</label>
+        <div class="loading">
+          <div class="loading_fill load-anim-repeat"></div>
+        </div>
+        <h6 class="loading">Loading...</h6>
       </section>
     </main>
 

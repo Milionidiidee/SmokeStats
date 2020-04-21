@@ -1,14 +1,41 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,900;1,100;1,400;1,900&display=swap");
 
 :root {
-  --Primary: rgb(36, 123, 160);
+  /*
+  --Primary: hsl(198, 63%, 38%);
+  --Secondary: rgb(112, 193, 179);
+  --Accent1: rgb(178, 219, 191);
+  --Accent2: rgb(243, 255, 189);
+  --Accent3: rgb(255, 22, 84);*/
+
+  --Primary: rgb(53, 178, 231);
   --Secondary: rgb(112, 193, 179);
   --Accent1: rgb(178, 219, 191);
   --Accent2: rgb(243, 255, 189);
   --Accent3: rgb(255, 22, 84);
 
+  --PrimaryDesaturated: rgb(105, 183, 216);
+  --SecondaryDesaturated: rgb(151, 190, 184);
+  --Accent1Desaturated: rgb(193, 212, 199);
+  --Accent2Desaturated: rgb(250, 255, 230);
+  --Accent3Desaturated: rgb(255, 89, 133);
+
+  --PrimarySaturated: rgb(0, 158, 226);
+  --SecondarySaturated: rgb(69, 194, 173);
+  --Accent1Saturated: rgb(128, 216, 156);
+  --Accent2Saturated: rgb(232, 255, 129);
+  --Accent3Saturated: rgb(255, 0, 68);
+
+  --PrimaryTransparent: rgba(53, 178, 231, 0.5);
+  --SecondaryTransparent: rgba(112, 193, 179, 0.5);
+  --Accent1Transparent: rgba(178, 219, 191, 0.5);
+  --Accent2Transparent: rgba(243, 255, 189, 0.5);
+  --Accent3Transparent: rgba(255, 22, 84, 0.5);
+
   --Canvas: rgb(255, 255, 255);
+  --LightGrey: rgb(214, 214, 214);
   --Grey: rgb(161, 161, 161);
+  --DarkGrey: rgb(92, 92, 92);
   --CanvasContrast: rgb(15, 15, 15);
 }
 
@@ -18,6 +45,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
+  font-family: "Roboto", sans-serif;
 }
 
 body {
@@ -29,14 +58,23 @@ body {
   color: var(--CanvasContrast);
 }
 
+/* --------------------- START OF FRAMEWORK SECTION --------------------- 
+ * Inside this section everything is to layout the framework page
+*/
+
 main.framework {
   display: grid;
   grid-template-columns: repeat(12, 0.083333fr);
-  grid-template-rows: repeat(5, auto);
+  grid-template-rows: repeat(10, auto);
   grid-template-areas:
     "typography typography typography typography typography typography typography typography typography typography typography typography"
     "buttons buttons buttons buttons buttons buttons buttons buttons buttons links links links"
     "inputs inputs inputs inputs inputs inputs inputs inputs inputs alerts alerts alerts"
+    "inputs inputs inputs inputs inputs inputs inputs inputs inputs colors colors colors"
+    "inputs inputs inputs inputs inputs inputs inputs inputs inputs colors colors colors"
+    "inputs inputs inputs inputs inputs inputs inputs inputs inputs colors colors colors"
+    "inputs inputs inputs inputs inputs inputs inputs inputs inputs colors colors colors"
+    "inputs inputs inputs inputs inputs inputs inputs inputs inputs colors colors colors"
     "inputs inputs inputs inputs inputs inputs inputs inputs inputs colors colors colors"
     "loadings loadings loadings loadings loadings loadings loadings loadings loadings loadings loadings loadings";
   width: 90%;
@@ -45,25 +83,126 @@ main.framework {
 }
 
 section.framework {
-  border: 1px solid var(--Accent1);
+  border: 1px solid var(--Secondary);
   padding: 10px;
 }
 
 section.typography {
   grid-area: typography;
+
+  display: grid;
+  grid-template-columns: repeat(6, 0.166666fr);
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+    "section-title-typo section-title-typo section-title-typo section-title-typo section-title-typo section-title-typo"
+    "black-text-typo black-text-typo regular-text-typo regular-text-typo thin-text-typo thin-text-typo"
+    "headings-typo headings-typo headings-typo body-typo body-typo body-typo";
+
+  justify-items: center;
+  align-items: center;
 }
+h6.section-title-typo {
+  grid-area: section-title-typo;
+}
+div.black-text-typo {
+  grid-area: black-text-typo;
+}
+div.regular-text-typo {
+  grid-area: regular-text-typo;
+}
+div.thin-text-typo {
+  grid-area: thin-text-typo;
+}
+div.headings-typo {
+  grid-area: headings-typo;
+}
+div.body-typo {
+  grid-area: body-typo;
+  padding: 2em 2em 2em 1em;
+}
+
 section.buttons {
   grid-area: buttons;
+
+  display: grid;
+  grid-template-columns: repeat(4, 0.25fr);
+  grid-template-rows: 0.25fr 4em;
+  grid-template-areas:
+    "section-title-button section-title-button section-title-button section-title-button"
+    "default-button hover-button active-button disabled-button";
+
+  justify-items: center;
+  align-items: center;
 }
+h6.section-title-button {
+  grid-area: section-title-button;
+}
+div.default-button {
+  grid-area: default-button;
+}
+div.hover-button {
+  grid-area: hover-button;
+}
+div.active-button {
+  grid-area: active-button;
+}
+div.disabled-button {
+  grid-area: disabled-button;
+}
+
 section.links {
   grid-area: links;
+
+  display: grid;
+  grid-template-columns: repeat(2, 0.5fr);
+  grid-template-rows: 0.25fr 2em 2em;
+  grid-template-areas:
+    "section-title-links section-title-links"
+    "default-links hover-links"
+    "active-links visited-links";
+
+  justify-items: center;
+  align-items: center;
 }
+h6.section-title-links {
+  grid-area: section-title-links;
+}
+div.default-links {
+  grid-area: default-links;
+}
+div.hover-links {
+  grid-area: hover-links;
+}
+div.active-links {
+  grid-area: active-links;
+}
+div.visited-links {
+  grid-area: visited-links;
+}
+
 section.inputs {
   grid-area: inputs;
 }
 section.alerts {
   grid-area: alerts;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.25fr auto;
+  grid-template-areas:
+    "section-title-alerts"
+    "section-alerts";
+
+  justify-items: center;
+  align-items: center;
 }
+h6.section-title-alerts {
+  grid-area: section-title-alerts;
+}
+div.section-alerts {
+  grid-area: section-alerts;
+}
+
 section.colors {
   grid-area: colors;
 }
@@ -84,29 +223,132 @@ main > section > h6 {
   text-transform: uppercase;
 }
 
+.btn-hover {
+  text-decoration: none;
+  color: var(--Canvas);
+  padding: 1em 1.5em;
+  border-radius: 6px;
+  text-align: center;
+  outline: none;
+
+  position: relative;
+  top: -3px;
+  left: -2px;
+  box-shadow: 2px 3px var(--DarkGrey);
+  background-color: var(--PrimarySaturated);
+}
+
+.btn-active {
+  text-decoration: none;
+  color: var(--Canvas);
+  padding: 1em 1.5em;
+  border-radius: 6px;
+  text-align: center;
+  outline: none;
+
+  background-color: var(--PrimarySaturated);
+}
+
+.btn-disabled {
+  text-decoration: none;
+  color: var(--Canvas);
+  padding: 1em 1.5em;
+  border-radius: 6px;
+  text-align: center;
+  outline: none;
+  background-color: var(--PrimaryDesaturated);
+  opacity: 75%;
+}
+
+a.link-hover {
+  text-decoration: none;
+  color: var(--Accent3Saturated);
+  font-weight: 400;
+}
+
+a.link-active {
+  text-decoration: none;
+  color: var(--Accent3Saturated);
+  font-weight: 400;
+}
+
+a.link-visited {
+  text-decoration: none;
+  color: var(--Accent3Desaturated);
+  font-weight: 400;
+}
+
+.primary-color {
+  border-radius: 6px;
+  background-color: var(--Primary);
+
+  width: 100%;
+  height: 12%;
+}
+.secondary-color {
+  border-radius: 6px;
+  background-color: var(--Secondary);
+
+  width: 100%;
+  height: 12%;
+}
+.accent1-color {
+  border-radius: 6px;
+  background-color: var(--Accent1);
+
+  width: 100%;
+  height: 12%;
+}
+.accent2-color {
+  border-radius: 6px;
+  background-color: var(--Accent2);
+
+  width: 100%;
+  height: 12%;
+}
+.accent3-color {
+  border-radius: 6px;
+  background-color: var(--Accent3);
+
+  width: 100%;
+  height: 12%;
+}
+
+.load-anim-repeat {
+  animation-iteration-count: infinite;
+}
+
+/* --------------------- END OF FRAMEWORK SECTION --------------------- */
+
 h1 {
   font-size: 2em;
   line-height: 2;
+  font-weight: 900;
 }
 h2 {
   font-size: 1.75em;
   line-height: 2;
+  font-weight: 900;
 }
 h3 {
   font-size: 1.5em;
   line-height: 2;
+  font-weight: 400;
 }
 h4 {
   font-size: 1.25em;
   line-height: 2;
+  font-weight: 400;
 }
 h5 {
   font-size: 1em;
   line-height: 2;
+  font-weight: 100;
 }
 h6 {
   font-size: 0.75em;
   line-height: 2;
+  font-weight: 100;
 }
 
 p {
@@ -114,6 +356,7 @@ p {
   font-weight: 100;
   line-height: 1.5em;
   margin-bottom: 1em;
+  text-align: justify;
 }
 
 strong {
@@ -122,6 +365,129 @@ strong {
 
 em {
   font-style: italic;
+}
+
+a.link {
+  text-decoration: none;
+  color: var(--Accent3);
+  font-weight: 400;
+}
+
+a.link:hover {
+  color: var(--Accent3Saturated);
+}
+
+a.link:active {
+  color: var(--Accent3Saturated);
+}
+
+a.link:visited {
+  color: var(--Accent3Desaturated);
+}
+
+label {
+  display: block;
+  margin: 2em 0 0 0;
+
+  font-size: 0.75em;
+}
+
+select {
+  display: block;
+  margin: 0.5em 0.5em 0.25em 0;
+  border-radius: 6px;
+  border: 1px solid var(--LightGrey);
+
+  padding: 1em 0.5em;
+
+  background-color: var(--Canvas);
+  color: var(--DarkGrey);
+}
+
+select:active {
+  border-radius: 6px;
+  border: 1px solid var(--CanvasContrast);
+}
+
+select:focus {
+  border-radius: 6px;
+  border: 1px solid var(--CanvasContrast);
+  outline: none;
+  color: var(--CanvasContrast);
+}
+
+textarea {
+  display: block;
+  margin: 0.5em 0.5em 0.25em 0;
+  border-radius: 6px;
+  border: 1px solid var(--LightGrey);
+
+  padding: 1em 0.5em;
+
+  background-color: var(--Canvas);
+  color: var(--DarkGrey);
+}
+
+textarea:active {
+  border-radius: 6px;
+  border: 1px solid var(--CanvasContrast);
+}
+
+textarea:focus {
+  border-radius: 6px;
+  border: 1px solid var(--CanvasContrast);
+  outline: none;
+  color: var(--CanvasContrast);
+}
+
+input {
+  display: block;
+  margin: 0.5em 0.5em 0.25em 0;
+  border-radius: 6px;
+  border: 1px solid var(--LightGrey);
+  padding: 1em 0.5em;
+  width: 75%;
+
+  background-color: var(--Canvas);
+  color: var(--DarkGrey);
+}
+
+input:active {
+  border-radius: 6px;
+  border: 1px solid var(--CanvasContrast);
+}
+
+input:focus {
+  border-radius: 6px;
+  border: 1px solid var(--CanvasContrast);
+  outline: none;
+  color: var(--CanvasContrast);
+}
+
+input:disabled {
+  opacity: 0.5;
+}
+
+.right-input {
+  border: 1px solid var(--Accent1Saturated);
+}
+.wrong-input {
+  border: 1px solid var(--Accent3);
+}
+.active-input {
+  border-radius: 6px;
+  border: 1px solid var(--CanvasContrast);
+}
+
+textarea {
+  display: block;
+  width: 75%;
+  resize: none;
+}
+
+.form-mess {
+  font-size: 0.75em;
+  margin: 0 0 1.5em 0.5em;
 }
 
 .black-text {
@@ -134,4 +500,90 @@ em {
 
 .thin-text {
   font-weight: 100;
+}
+
+.btn {
+  text-decoration: none;
+  color: var(--Canvas);
+  background-color: var(--Primary);
+  color: var(--Canvas);
+  padding: 1em 1.5em;
+  border-radius: 6px;
+  text-align: center;
+  outline: none;
+}
+
+.btn:hover {
+  color: var(--Canvas);
+  position: relative;
+  top: -3px;
+  left: -2px;
+  box-shadow: 2px 3px var(--DarkGrey);
+  background-color: var(--PrimarySaturated);
+}
+
+.btn:active {
+  color: var(--Canvas);
+  background-color: var(--PrimarySaturated);
+}
+
+.alrt {
+  background-color: var(--SecondaryTransparent);
+  color: var(--SecondarySaturated);
+
+  border-radius: 1.5em;
+  margin: 1em auto;
+  padding: 0.25em 0.75em;
+
+  text-align: center;
+  font-weight: 900;
+}
+
+.alrt-bad {
+  background-color: var(--Accent3Transparent);
+  color: var(--Accent3Saturated);
+}
+
+.alrt-good {
+  background-color: var(--Accent1Transparent);
+  color: var(--Accent1Saturated);
+}
+
+div.loading {
+  width: 75%;
+  height: 10px;
+  margin: 0 auto;
+  background-color: var(--LightGrey);
+  border-radius: 5px;
+}
+
+div.loading_fill {
+  animation-name: loading_anim;
+  animation-duration: 1.5s;
+  animation-delay: 1s;
+  animation-timing-function: ease;
+
+  background-color: var(--Primary);
+  height: 10px;
+
+  border-radius: 5px;
+}
+
+@keyframes loading_anim {
+  0% {
+    width: 2%;
+  }
+  50% {
+    width: 60%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+h6.loading {
+  position: relative;
+  top: 5px;
+  margin: 0.25em auto;
+  text-align: center;
 }
