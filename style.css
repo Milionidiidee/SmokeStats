@@ -59,6 +59,8 @@ body {
   margin: 0;
   font-family: "Roboto", sans-serif;
   font-size: 1em;
+  word-spacing: 1px;
+  letter-spacing: 0.3px;
   color: var(--DarkGrey);
 }
 
@@ -348,4 +350,76 @@ footer {
   margin: 0 auto;
   text-align: center;
   justify-content: space-evenly;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* --------------------------- DATA PIE CHART ----------------------------------- */
+
+.pie-chart-grid {
+  width: 100%;
+  margin: 2em auto 1em auto;
+
+  display: grid;
+  grid-template-rows: 0.5fr 0.5fr;
+  grid-template-columns: auto auto;
+  grid-template-areas:
+    "pie-chart-title pie-chart-title"
+    "pie legend";
+
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.pie-chart-title {
+  grid-area: pie-chart-title;
+  text-align: center;
+}
+
+.bg-primary {
+  background-color: var(--Primary);
+}
+.bg-primarySat {
+  background-color: var(--PrimarySaturated);
+}
+.bg-secondary {
+  background-color: var(--Secondary);
+}
+.bg-accent1 {
+  background-color: var(--Accent1);
+}
+.bg-accent2 {
+  background-color: var(--Accent2);
+}
+.bg-accent3 {
+  background-color: var(--Accent3);
+}
+.bg-lightGrey {
+  background-color: var(--LightGrey);
+}
+
+.pie {
+  grid-area: pie;
+
+  width: 8em;
+  height: 8em;
+}
+
+.legend {
+  grid-area: legend;
+}
+
+.mini-square {
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  z-index: 1;
+}
+
+h6.chart-legend {
+  position: relative;
+  left: 0.5em;
+  display: inline;
 }
